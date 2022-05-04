@@ -5,21 +5,21 @@
 class Omniversion < Formula
   desc "Omniversion"
   homepage "https://layer9.berlin/"
-  version "0.42.26"
+  version "0.42.27"
   license "AGPL-3.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/omniversion/omniversion/releases/download/v0.42.26/brew_omniversion_0.42.26_darwin_arm64.tar.gz"
-      sha256 "ec7d2d5aca4d6c30cb79b6485a13de06b96d37b1df6bc56ed8ff4855fc6a42cb"
+    if Hardware::CPU.intel?
+      url "https://github.com/omniversion/omniversion/releases/download/v0.42.27/brew_omniversion_0.42.27_darwin_amd64.tar.gz"
+      sha256 "9ba96267cbcc6093ec38c0df8fec21f72a11bd9a196ab9d4ea1003dd2d9c9903"
 
       def install
         bin.install "omniversion"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/omniversion/omniversion/releases/download/v0.42.26/brew_omniversion_0.42.26_darwin_amd64.tar.gz"
-      sha256 "25a2b19069368929ee843e383270d9ce56445236a3362bf6544b4b0c8908808e"
+    if Hardware::CPU.arm?
+      url "https://github.com/omniversion/omniversion/releases/download/v0.42.27/brew_omniversion_0.42.27_darwin_arm64.tar.gz"
+      sha256 "0014ee9166f4c68da5ac3e4bf346e8f120f3b915fbb5594ae09384fab1220bad"
 
       def install
         bin.install "omniversion"
@@ -29,16 +29,16 @@ class Omniversion < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/omniversion/omniversion/releases/download/v0.42.26/brew_omniversion_0.42.26_linux_amd64.tar.gz"
-      sha256 "9ab503aa5857032a687e76d188d6e726cd31a07e65ec8e72e684ffef8fc71b6b"
+      url "https://github.com/omniversion/omniversion/releases/download/v0.42.27/brew_omniversion_0.42.27_linux_amd64.tar.gz"
+      sha256 "d487a6ea5f9b16d4fafa9ff2c98a26846f8c9919bd424721727c142c8d4c6014"
 
       def install
         bin.install "omniversion"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/omniversion/omniversion/releases/download/v0.42.26/brew_omniversion_0.42.26_linux_arm64.tar.gz"
-      sha256 "30b074c7efa8076d5b9c1a4a12c002ec27268d6d0db5a53f3c89e92daa01fce4"
+      url "https://github.com/omniversion/omniversion/releases/download/v0.42.27/brew_omniversion_0.42.27_linux_arm64.tar.gz"
+      sha256 "295af9468ce082501dd92c0cae44071ee6167e3945bf7d5e93279d471cda4ad2"
 
       def install
         bin.install "omniversion"
