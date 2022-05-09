@@ -5,21 +5,21 @@
 class Omniversion < Formula
   desc "Omniversion"
   homepage "https://layer9.berlin/"
-  version "0.43.5"
+  version "0.43.6"
   license "AGPL-3.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/omniversion/omniversion/releases/download/v0.43.5/brew_omniversion_0.43.5_darwin_arm64.tar.gz"
-      sha256 "5995fe1ab9b2f3f320b820f7f1b13fe49bf6deecf026d6c6995f3f273cbbc5a4"
+    if Hardware::CPU.intel?
+      url "https://github.com/omniversion/omniversion/releases/download/v0.43.6/brew_omniversion_0.43.6_darwin_amd64.tar.gz"
+      sha256 "1667f9f4bd3686923ec0c413fbafcb8d2630c32c156c8a211e84f29af7478ed7"
 
       def install
         bin.install "omniversion"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/omniversion/omniversion/releases/download/v0.43.5/brew_omniversion_0.43.5_darwin_amd64.tar.gz"
-      sha256 "4ddfef3da612055e5906b240ca147c176cd17823e487c973874bfc6eeca0fc72"
+    if Hardware::CPU.arm?
+      url "https://github.com/omniversion/omniversion/releases/download/v0.43.6/brew_omniversion_0.43.6_darwin_arm64.tar.gz"
+      sha256 "102f36ca730fb1afc5a3b086d3de5811a85e7ce3dda3754ea1a8be51d0f86b60"
 
       def install
         bin.install "omniversion"
@@ -28,17 +28,17 @@ class Omniversion < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/omniversion/omniversion/releases/download/v0.43.5/brew_omniversion_0.43.5_linux_amd64.tar.gz"
-      sha256 "52ba5cc28120ec21ed371a7e49546cb74a8e804ad4cdf736afc882bf3fd4af2b"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/omniversion/omniversion/releases/download/v0.43.6/brew_omniversion_0.43.6_linux_arm64.tar.gz"
+      sha256 "407cd66b05bd6aa04aebd6eafc3329db5194277a6beee11160584a5990d52be1"
 
       def install
         bin.install "omniversion"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/omniversion/omniversion/releases/download/v0.43.5/brew_omniversion_0.43.5_linux_arm64.tar.gz"
-      sha256 "0f13002a5342f99a62bb3df43692696689d44fc150fa3f22fd2abae2de1f9c6b"
+    if Hardware::CPU.intel?
+      url "https://github.com/omniversion/omniversion/releases/download/v0.43.6/brew_omniversion_0.43.6_linux_amd64.tar.gz"
+      sha256 "6c9e6254f06fa4da9981d9e3ea90add1e34b69e062d63bb31fdbb8808d5ab316"
 
       def install
         bin.install "omniversion"
